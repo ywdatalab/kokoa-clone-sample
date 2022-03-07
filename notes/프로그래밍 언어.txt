@@ -1,0 +1,26 @@
+<웹 개발 언어>
+1. 프론트엔드
+-HTML, CSS, JavaScript
+-React(JavaScript 기반) 등 라이브러리
+
+2. 벡엔드
+-굉장히 많은 종류의 언어 존재
+-Java, Python, Ruby, PHP, JavaScript 등
+-JQuery, Django, Rails, NodeJS 등 프레임워크 존재
+
+
+<앱 개발 언어>
+1. 하이브리드 앱
+-HTML, CSS, JavaScript로 웹 페이지 구성,
+겉테두리만 감싸서 앱으로 출시
+
+2. 크로스 플랫폼 앱
+-React Native(JavaScript 기반), Flutter(Dart 기반) 등 프레임워크 사용
+-안드로이드, ios 코드를 따로 작성하지 않고 하나로 해결
+-앱이 네이티브보다는 느림
+
+3. 네이티브 앱
+-안드로이드(Java, Kotlin 언어 사용), ios (Swift, Obj-C 언어 사용)
+-각각의 플랫폼 앱을 따로 만들어야 함(코드를 2개 작성해야 함)
+-앱이 굉장히 빠르고, 오프라인에서도 작동함
+-하드웨어 기능을 자유롭게 쓸 수 있음(카메라, 전화번호부, 저장공간, GPS 등)

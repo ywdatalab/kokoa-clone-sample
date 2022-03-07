@@ -1,0 +1,174 @@
+<css를 html에 연결하기>
+1. <style>태그 사용 (비추)
+2. <link href="style.css" rel="stylesheet" />
+
+<csss syntax>
+selector {
+    property(띄어쓰기 없음, '-' 사용) : value ;
+    color: blue;
+    font-size:20px;
+    text-style: initial;
+    text-align: center;
+    text-weight: 900;
+    text-decoration: underline;
+}
+
+cascading: 순차적으로 진행되는
+--> 동일한 대상에 대한 다른 내용의 코드가 중복되어 있는 경우,
+가장 마지막에 입력된 코드가 반영됨!!!!
+
+div, header 등의 옆에는 어떤 것도 들어갈 수 없다!! --> block (대부분)
+span, link,img 등 옆에 어떤 것이 들어갈 수 있는 것도 있다!!! --> inline (소수임)
+
+display: block/inline 으로 전환 가능
+block과 달리 inline은 너비/높이가 없음
+
+block(box)의 특징
+1. margin: box의 border의 바같에 있는 공간
+body는 border 밖에 8px의 margin을 갖는다.
+margin: 1개(전방향), 2개(위, 아래), 4개(위, 오른쪽, 아래, 왼쪽 시계방향);
+*collapsing margins: 두 box의 위/아래 border가 일치하면 하나로 취급됨(같이 늘어남)
+2. padding: box의 border의 안쪽에 있는 공간
+3. border: 말 그대로 경계선. width, style, color 순. solid만 거의 사용.
+border은 block과 inline 모두에 적용됨
+border-style ~ 적으면 해당 element의 border style만 바꿀 수 있음(cascading!!!)
+
+<정리>
+[block]
+margin, padding, border 다 잘 적용됨.
+높이/너비 있음.
+옆에 다른 요소가 올 수 없음.
+div, header 등 거의 모든 요소
+
+[inline]
+padding, border 은 잘 적용됨. margin은 위/아래는 적용 안 됨.
+높이/너비 없음.
+옆에 다른 요소가 올 수 있음.
+span, link, img
+
+한 요소는 1개의 아이디만 가질 수 있음!!, 하나의 아이디는 정말 딱 1개의 그 요소만이 가질 수 있음!!!
+#idname --> #을 붙이면 id를 선택할 수 있음
+tag로 가리키면 해당 tag 전부에 적용, id로 선택하면 해당 id에만 적용
+
+*{
+
+}
+이렇게 하면 html 문서에 있는 모든 것에 적용시킬 수 있음.
+
+selctor1, selctor2, selctor3 {
+
+}
+이런식으로 하면 여러가지 요소에 대해 동시에 css 작성 가능
+
+class: 여러 개의 요소에 중복 사용 가능.  하나의 요소가 여러개의 class 가질 수 있음.
+.classname {
+
+}
+이렇게 하면 class애 대한 css 작성 가능
+주로 id보다는 class 많이 사용, 최대한 효율적으로 사용 --> 반복 줄임!!!
+
+display: inline-block --> block을 나란히 놓을 수 있음. but 창 크기에 유동적 지원x (비추)
+
+flexbox --> box 배열에 사용
+1. 부모 엘리먼트에게만 말하고 자식 엘리먼트에는 말하지 않는다.
+(부모 element를 display: flex로 작성 --> 부모 element를 flex container로 만든다)
+2. 주축(main axis): justify-content
+3. 교차축(cross axis): align-items
+*수평/수직은 바꿀 수 있음(디폴트 값(row)이 주축-수평, 교차축-수직, flex-direction: colum으로 바꾸면 반대)
+*align-items 사용하려면 body에 height가 있어야 함.
+*자식 엘리먼트도 다시 flexbox가 될 수 있음
+
+flex-wrap: wrap/nowrap/wrap-reverse
+flex-direction: row/colum/column-reverse/row-reverse
+
+100vh : 화면 높이의 100% (상대적인 값)
+
+position:
+fixed -> 모든 레이어 위에 존재.  항상 위치 고정됨.
+static -> 기본. 원래 놓여지는 자리에 있음.
+relative -> left, top, bottom, right 10px 통해 원래 위치(static)에서 옮길 수 있음.
+absolute -> left, top, bottom, right 10px 가장 가까운 부모 relative element의 끝으로 감.
+
+psudo selector
+div: first-child{
+
+}
+last-child
+nth-child(2)
+nth-child(even)
+nth-child(3n+1) 3개마다
+
+p span {
+
+}
+이렇게 하면 p 안에 있는 span만 선택됨
+
+div > span {
+
+}
+이렇게 하면 div의 바로 밑 자식인 span에만 적용시킬 수 있다
+
+p + span {
+
+}
+p 바로 옆의 span에 적용 가능. (형제관계과 바로 옆에 있어야함)
+
+p ~ span {
+
+}
+이렇게 하면 형제관계지만 바로 옆은 아닌 span에 적용가능
+
+
+<attribute selector>
+input:required {
+
+}
+-> input 태그 안의 required attribute 선택 가능
+
+input[placeholder="username"] {
+
+}
+-> placeholder="username"의 attribute가 포함된 태그 선택
+([]앞에 띄어쓰기 없음 주의!!)
+
+input[placeholder~="name"] {
+
+}
+-> placeholder에 name이 포함된 태그 선택됨
+&=, ^= 등등 많음.
+--> html 코드에 class를 만들지 않고 css 내에서 해결 가능해서 좋음
+
+<state>
+-active(클릭된 상태), hover(커서가 얹혀진 상태), focus(키보드로 선택된 상태)
+-visited(링크<a>에만 적용; 이미 방문된 상태)
+-focused-within(자식 엘리먼트 중에 focused 상태인 것이 있는 경우)
+
+form:hover input:foucus {
+    background-color: red;
+}
+-> form이 hover 상태이고, 그 자식 엘리먼트인 input이 foucus상태일 때 적용
+
+input::placeholder{
+
+}
+-> ::placeholder 이렇게 하면 placeholder에만 적용
+
+p::selection {
+
+}
+--> ::selection 이렇게 하면 글자를 드래그에서 선택된 경우를 설정할 수 있음
+
+::first-letter, ::first-line도 있음
+
+<colors> cf. color picker 크롬 익스텐션
+-hexadecimal
+-rgb
+-rgba(a(alpha)는 투명도)
+
+<변수 지정 custom property(variable)>
+:root {
+    --main-color: #fcce00
+    --default-border
+}
+
+color: var(--main-color) 나중에 이런식으로 사용

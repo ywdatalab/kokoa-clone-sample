@@ -1,0 +1,33 @@
+.settings {
+  margin-top: -82px;
+}
+
+.settings-screen {
+  margin-top: 30px;
+}
+
+.settings-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sorry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.zzanggu {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 80%;
+  height: auto;
+  border-radius: 10%;
+}
+
+.sorry h4 {
+  font-size: 18px;
+  font-weight: 600;
+}

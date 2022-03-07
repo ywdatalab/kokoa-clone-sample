@@ -1,0 +1,65 @@
+<transitions>
+:state에 따라 바뀌는 요소에 사용
+a {
+    color: wheat;
+    background-color: tomato;
+    text-decoration: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 55px;
+    transition: color 5s ease-in-out, background-color 5s ease-in-out;
+    transition: all 이렇게 해도 됨
+}
+a:hover {
+    color: tomato;
+    background-color: wheat;
+}
+
+-> transition은 원래 엘리먼트(state 말고)에 작성되어야 함.
+-> ease-in, ease-out, ease-in-out, cubic-bezier() 으로 애니매이션 속도 조절
+https://matthewlein.com/tools/ceaser 참고
+
+<transform>
+:element의 모양 등을 변화시킴(다른 요소에는 영향x)
+img {
+    transition: transform 2s ease-in-out
+}
+img:hover {
+    transform: rotateX(60deg)
+}
+-> transform과 함께 사용하면 좋음. transform mdn 검색해보기. 바뀐 state 자리에 넣어야됨
+
+<animations>
+@keyframes 애니메이션 이름 {
+    from {
+        transform: rotateX(0)
+    }
+    to {
+        transform: rotateX(180deg)
+    }
+}
+img {
+    animation: 애니매이션 이름 5s ease-in-out infinate;
+}
+
+@keyframes 애니메이션 이름 {
+    0% {
+        transform: rotateX(0)
+    }
+    50% {
+        transform: rotateX(180deg)
+    }
+    100% {
+        transform: rotateX(0)  100%와 0%가 같아야 보기 좋음
+    }
+}
+
+<media queries>
+:사용자의 스크린 환경애 반응하여 css 적용됨
+@media screen and (min-width: 600px) and (max-widthL 1200px) and (orientation: landscape 또는 portrait) {
+    div {
+        background-color: wheat;
+    }
+}
+
+@media print -> 웹 페이지 프린트시 설정

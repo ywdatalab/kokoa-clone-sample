@@ -1,0 +1,37 @@
+.alt-header {
+  width: 100%;
+  padding: 28px 15px 10px 15px;
+  /*z-index 학습을 위해 위쪽 padding 일부러 크게 설정함.*/
+  position: fixed;
+  top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.alt-header__icon {
+  padding-left: 10px;
+}
+
+.alt-header__title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.alt-header__column {
+}
+
+.alt-header__column:first-child {
+  width: 33%;
+}
+
+.alt-header__column:nth-child(2) {
+  width: 33%;
+  text-align: center;
+}
+
+.alt-header__column:last-child {
+  width: 33%;
+  text-align: end;
+}

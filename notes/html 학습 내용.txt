@@ -1,0 +1,41 @@
+mdn
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+<!DOCTYPE html>
+
+<tags (attributes)>
+html (lang=kr, en)
+
+head
+meta (name=description, content) (chartset = utf-8)
+link (rel=shortcut icon, sizes, href)
+title
+
+
+body
+h1 ~ h6
+ul, ol, li (list)
+a (href) (target: _self, _blank)
+img / (self closing tag) (src)
+p
+br
+abbr(title)
+mark
+audio(controls=enabled, autoplay, src)
+video
+
+form
+input (type=text, password, color, file, submit, placeholder, url, email, range, date required,
+id)
+label (for)
+
+id(element)
+-html 문서 전체에서 고유해야 함.
+-한 element 당 하나의 id만 가질 수 있음.
+
+<non-semantic tags(=content sectioning)>
+div
+header
+main
+footer
+nav
